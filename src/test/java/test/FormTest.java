@@ -10,6 +10,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.be;
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class FormTest {
@@ -24,20 +25,20 @@ public class FormTest {
 
 
     @Test
-    void formCheck() throws InterruptedException {
+    void formCheck() {
 
         open("/automation-practice-form");
         $("#firstName").setValue("Petya");
         $("#lastName").setValue("Petrov");
         $("#userEmail").setValue("p@mail.ru");
-        $$(".custom-control-label").findBy(text("Female")).click();
+        $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9096776685");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("2023");
         $(".react-datepicker__month-select").selectOption("January");
         $("div.react-datepicker__day--029").click();
         $("#subjectsInput").setValue("Maths").pressEnter();
-        $$(".custom-control-label").findBy(text("Reading")).click();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("Снимок экрана 2025-02-21 130657.png");
         $("#currentAddress").setValue("Molochnaya st 24");
         $("#state").click();
