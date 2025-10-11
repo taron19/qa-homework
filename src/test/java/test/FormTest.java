@@ -39,9 +39,9 @@ public class FormTest {
         $("#uploadPicture").uploadFromClasspath("Снимок экрана 2025-02-21 130657.png");
         $("#currentAddress").setValue("Molochnaya st 24");
         $("#state").click();
-        $("#react-select-3-option-2").click();
+        $(byText("Haryana")).click();
         $("#city").click();
-        $("#react-select-4-option-0").click();
+        $(byText("Panipat")).click();
         $("#submit").click();
 
 
@@ -49,14 +49,14 @@ public class FormTest {
 
         $(".table-responsive").shouldHave(text("Petya Petrov"));
         $(".table-responsive").shouldHave(text("p@mail.ru"));
-        $(".table-responsive").shouldHave(text("Female"));
+        $(".table-responsive").shouldHave(text("Male"));
         $(".table-responsive").shouldHave(text("9096776685"));
         $(".table-responsive").shouldHave(Condition.text("29 January,2023"));
         $(".table-responsive").shouldHave(text("Maths"));
         $(".table-responsive").shouldHave(text("Reading"));
         $(".table-responsive").shouldHave(text("Снимок экрана 2025-02-21 130657.png"));
         $(".table-responsive").shouldHave(text("Molochnaya st 24"));
-        $(".table-responsive").shouldHave(text("Haryana Karnal"));
+        $(".table-responsive").shouldHave(text("Haryana Panipat"));
     }
 
 
